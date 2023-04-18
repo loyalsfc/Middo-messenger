@@ -7,20 +7,18 @@ import { CgChevronUpO } from "react-icons/cg";
 
 //Pages and Components
 import SidebarMenu from "../SidebarMenu";
-import { useSidebarContext } from "@/context/SidebarContext";
 
 import { useContext } from "react";
 import { SidebarContext } from "@/context/SidebarContext";
 
 const Sidebar = () => {
-  // const useSidebarContext = () => useContext(SidebarContext);
-  const { open, toggleMenu } = useSidebarContext();
+  const { open, toggleMenu } = useContext(SidebarContext);
 
   return (
     <>
       <div className="flex items-end justify-end h-screen bg-teal-500 dark:bg-gray-800">
         <button
-          className="fixed flex items-center justify-center w-10 h-10 text-4xl duration-300 rounded-full lg:hidden z-90 bottom-10 right-8 drop-shadow-lg hover:bg-[#20b9fc]"
+          className="fixed flex items-center justify-center w-10 z-50 h-10 text-4xl duration-300 rounded-full lg:hidden z-90 bottom-10 right-8 drop-shadow-lg hover:bg-[#20b9fc]"
           onClick={toggleMenu}
         >
           <CgChevronUpO size={25} />
